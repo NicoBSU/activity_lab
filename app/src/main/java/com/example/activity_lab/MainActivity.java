@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                             Intent data = result.getData();
                             String answerString = data.getStringExtra("ANSWER_TEXT");
                             MainActivity.this.lastAnswer.setText(answerString);
+                        } else if(result.getResultCode() == Activity.RESULT_CANCELED) {
+                            MainActivity.this.lastAnswer.setText("Operation Canceled");
                         }
                     }
                 });
